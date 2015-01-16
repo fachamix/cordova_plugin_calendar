@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="org.vixenit.calendar"
+	  version="0.1.0">
+    <name>Calendar</name>
+    <description>Sample Cordova Calendar Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,calendar</keywords>
+ 
+ 
+    <js-module src="www/calendar.js" name="Calendar">
+        <clobbers target="window.calendar" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Calendar">
+                <param name="android-package" value="org.vixenit.calendar.Calendar"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/Calendar.java" target-dir="src/org/vixenit/calendar" />     
+     </platform>         
+</plugin>
